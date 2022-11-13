@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 public class DBUtil {
 	private static Connection  conn;
 	
-	static ResourceBundle rb = ResourceBundle.getBundle("com.shashi.utility.database");
+	static ResourceBundle rb = ResourceBundle.getBundle("com.digitalvision.utility.database");
 	
 	public  DBUtil() {}
 	
