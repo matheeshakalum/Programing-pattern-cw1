@@ -21,8 +21,8 @@
 	%>
 <!--Company Header Starting  -->
 <div class="jumbotron text-center">
-  <h1>Ellison Electronics</h1>
-  <p>We specialize in Electronics</p>
+  <h1>Digital Vision</h1>
+  <p>Mobile Solution Provider</p>
   <form class="form-inline">
     <div class="input-group">
       <input type="text" class="form-control" size="50" placeholder="Search Items" required>
@@ -45,7 +45,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.jsp"><span class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>  
+      <a class="navbar-brand" href="userHome.jsp"><span class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>  
 	</div>      
 	
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -72,7 +72,7 @@
  
  		
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">CATEGORIES
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
@@ -81,6 +81,7 @@
             <li><a href="userHome.jsp">Laptops</a></li>
           </ul>
         </li>
+        <li><a href="#">WISH LIST</a></li>
         <li><a href="userHome.jsp">Profile</a></li>
         <li><a href="./LogoutSrv">Logout</a></li>
 <!--         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
