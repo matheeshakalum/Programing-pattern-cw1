@@ -48,30 +48,67 @@ public class AddtoWishListSrv extends HttpServlet {
 		
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html");
-		
+		String reqType = request.getParameter("type").toString();
+		String prodId = request.getParameter("pid");
 		String username = userName;
-		String prodId = request.getParameter("pid");		
-		String status="Product added failed to the wishlist";
 		
-		WishListBean wishList = new WishListBean();
-		WishListDao list = new WishListDaoImpl();
+		String status="";
 		
-		wishList.setPid(prodId);
-		
-		boolean isAdded=list.isAvailable(username,prodId);
-		
-		if(isAdded==false)
+		if(reqType.equals("add"))
 		{
-			status=list.addItemtoWishList(username,prodId);
 			
+			WishListBean wishList = new WishListBean();
+			WishListDao list = new WishListDaoImpl();
+			
+			wishList.setPid(prodId);
+			
+			boolean isAdded=list.isAvailable(username,prodId);
+			
+			if(isAdded==false)
+			{
+				status=list.addItemtoWishList(username,prodId);
+				
+			}
+			else
+			{
+				status="Product alredy added to the wishlist";
+			}
+			
+		}
+		else if(reqType.equals("remove") || reqType.equals("removeFromList")) 
+		{
+			
+			WishListBean wishList = new WishListBean();
+			WishListDao list = new WishListDaoImpl();
+			
+			wishList.setPid(prodId);
+			
+			boolean isAdded=list.isAvailable(username,prodId);
+			
+			if(isAdded==true)
+			{
+				status=list.removeItem(username,prodId);
+				
+			}
+			else
+			{
+				status="Product not found in the wishlist";
+			}
+			System.out.println(status);
+		}
+		
+		if(reqType.equals("removeFromList")){
+			RequestDispatcher rd = request.getRequestDispatcher("userWishList.jsp");
+			rd.include(request, response);
+			pw.println("<script>document.getElementById('message').innerHTML='"+status+"'</script>");
 		}
 		else
 		{
-			status="Product alredy added to the wishlist";
+			RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
+			rd.include(request, response);
+			pw.println("<script>document.getElementById('message').innerHTML='"+status+"'</script>");
 		}
 		
-		
-		System.out.print(status);
 		
 	}
 

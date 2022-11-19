@@ -65,8 +65,7 @@
       <form method="post">
       	<button type="submit" formaction="./AddtoCart?uid=<%=userName %>&pid=<%=product.getProdId() %>&pqty=1">Add to Cart</button>&nbsp;&nbsp;&nbsp;
       	<button type="submit" formaction="./AddtoCart?uid=<%=userName %>&pid=<%=product.getProdId() %>&pqty=1">Buy Now</button>
-        	<button type="submit" formaction="./AddtoWishList?uid=<%=userName %>&pid=<%=product.getProdId() %>">Remove from WishList</button>
-      		<div><i class="fa-regular fa-heart fa-2x" style="cursor:pointer;"></i></div>
+        <div><a href="./AddtoWishList?uid=<%=userName %>&pid=<%=product.getProdId()%>&type=removeFromList"><i class="fa fa-heart fa-heart fa-2x" style="cursor:pointer;"></i></a></div>
       </form>
     </div>
   </div>

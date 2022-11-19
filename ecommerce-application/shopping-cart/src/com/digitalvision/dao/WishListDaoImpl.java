@@ -60,21 +60,17 @@ public class WishListDaoImpl implements WishListDao {
 		String status= "Product added failed to the wish list";
 		
 		Connection con = DBUtil.provideConnection();
-		
 		PreparedStatement ps = null;
-
 		int rs;
 	
 		try {
 			
-
 			ps=con.prepareStatement("insert into wishlist (username,pid) values (?,?)");
 			ps.setString(1, username);
 			ps.setString(2, pid);
 			rs = ps.executeUpdate();
 				
 			status= "Product added successfully to the wish list";
-			
 
 		}
 		catch (SQLException e) {
@@ -98,7 +94,6 @@ public class WishListDaoImpl implements WishListDao {
 		Connection con = DBUtil.provideConnection();
 		
 		PreparedStatement ps = null;
-		PreparedStatement ps2 = null;
 		ResultSet rs = null;
 		
 		try {
@@ -107,9 +102,13 @@ public class WishListDaoImpl implements WishListDao {
 			ps.setString(2, pid);
 			rs = ps.executeQuery();
 			
-			if(rs.wasNull()!=true)
+			if( rs.next()==true)
 			{
 				status=true;
+			}
+			else
+			{
+				status=false;
 			}
 				
 		
@@ -123,7 +122,39 @@ public class WishListDaoImpl implements WishListDao {
 		DBUtil.closeConnection(ps);
 		DBUtil.closeConnection(rs);
 		
+	
 		return status;
 	}
+	
+	@Override
+	public String removeItem(String username, String pid)
+	{
+		String status= "Product removing failed from the wish list";
+		
+		Connection con = DBUtil.provideConnection();
+		PreparedStatement ps = null;
+		int rs;
+	
+		try {
+			
+			ps=con.prepareStatement("Delete from wishlist where username=? and pid=?");
+			ps.setString(1, username);
+			ps.setString(2, pid);
+			rs = ps.executeUpdate();
+				
+			status= "Product has been removed from the wish list";
+
+		}
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		
+		return status;
+	}
+	
 
 }
