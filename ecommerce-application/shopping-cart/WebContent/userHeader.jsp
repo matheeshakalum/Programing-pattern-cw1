@@ -81,7 +81,7 @@
             <li><a href="userHome.jsp">Laptops</a></li>
           </ul>
         </li>
-        <li><a href="#">WISH LIST</a></li>
+        <li><a href="userWishList.jsp">WISH LIST</a></li>
         <li><a href="userHome.jsp">Profile</a></li>
         <li><a href="./LogoutSrv">Logout</a></li>
 <!--         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>

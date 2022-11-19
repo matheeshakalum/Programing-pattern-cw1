@@ -40,19 +40,19 @@
 <div class="row text-center">
 
   <%
-  	WishListDao wishlist = new WishListDaoImpl();
-	
-  	ProductDaoImpl prodDao = new ProductDaoImpl(); 
-  	
-  	List<ProductBean> products = new ArrayList<ProductBean>();
-  	
-  	products = prodDao.getAllProducts();
-  	
-  	for(ProductBean product : products){
-  		
-  	boolean isWishListAdded=wishlist.isAvailable(userName, product.getProdId());
-
   
+  
+  	WishListDao wishlist = new WishListDaoImpl();
+  	
+  	List<WishListBean> items = new ArrayList<WishListBean>();
+  	
+  	items = wishlist.getList(userName);
+  	
+  	for(WishListBean list : items){
+  	
+  		String prodId = list.getPid();
+
+		ProductBean product = new ProductDaoImpl().getProductDetails(prodId);
   		
   %>
   
@@ -65,12 +65,7 @@
       <form method="post">
       	<button type="submit" formaction="./AddtoCart?uid=<%=userName %>&pid=<%=product.getProdId() %>&pqty=1">Add to Cart</button>&nbsp;&nbsp;&nbsp;
       	<button type="submit" formaction="./AddtoCart?uid=<%=userName %>&pid=<%=product.getProdId() %>&pqty=1">Buy Now</button>
-      <%if(isWishListAdded==true){%>
-      	<button type="submit" formaction="./AddtoWishList?uid=<%=userName %>&pid=<%=product.getProdId() %>">AA</button>
-     <%}else{%>
-      <button type="submit" formaction="./AddtoWishList?uid=<%=userName %>&pid=<%=product.getProdId() %>">BB</button>
-      <%} %>
-     
+        	<button type="submit" formaction="./AddtoWishList?uid=<%=userName %>&pid=<%=product.getProdId() %>">Remove from WishList</button>
       		<div><i class="fa-regular fa-heart fa-2x" style="cursor:pointer;"></i></div>
       </form>
     </div>
