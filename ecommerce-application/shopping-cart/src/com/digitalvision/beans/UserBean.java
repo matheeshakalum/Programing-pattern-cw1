@@ -6,7 +6,7 @@ public class UserBean implements Serializable{
 	
 	public UserBean(){}
 	
-	public UserBean(String userName, Long mobileNo, String emailId, String address, int pinCode, String password) {
+	public UserBean(String userName, Long mobileNo, String emailId, String address, String billingAddress, int pinCode, String password) {
 		super();
 		this.userName = userName;
 		this.mobileNo = mobileNo;
@@ -14,6 +14,7 @@ public class UserBean implements Serializable{
 		this.address = address;
 		this.pinCode = pinCode;
 		this.password = password;
+		this.billingAddress=billingAddress;
 	}
 
 	private String userName;
@@ -22,7 +23,16 @@ public class UserBean implements Serializable{
 	private String address;
 	private int pinCode;
 	private String password;
+	private String billingAddress;
 	
+	public String getBillingAddress() {
+		return billingAddress;
+	}
+
+	public void setBillingAddress(String billingAddress) {
+		this.billingAddress = billingAddress;
+	}
+
 	public String getUserName() {
 		return userName;
 	}

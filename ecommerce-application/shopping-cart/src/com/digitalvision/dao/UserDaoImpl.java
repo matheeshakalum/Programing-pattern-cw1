@@ -16,11 +16,11 @@ import com.digitalvision.utility.MailMessage;
 public class UserDaoImpl implements UserDao {
 
 	@Override
-	public String registerUser(String userName, Long mobileNo, String emailId, String address,int pinCode,
+	public String registerUser(String userName, Long mobileNo, String emailId, String address, String billingAddress,int pinCode,
 			String password) {
 		
 		
-		UserBean user = new UserBean(userName,mobileNo,emailId,address,pinCode,password);
+		UserBean user = new UserBean(userName,mobileNo,emailId,address,billingAddress,pinCode,password);
 		
 		String status = registerUser(user);
 		
@@ -42,25 +42,26 @@ public class UserDaoImpl implements UserDao {
 		Connection conn = DBUtil.provideConnection();
 		PreparedStatement ps = null;
 		if(conn != null) {
-			System.out.println("Connected Successfully!");
+			//System.out.println("Connected Successfully!");
 		}
 			
 		try {
 			
-			ps = conn.prepareStatement("insert into "+IUserConstants.TABLE_USER+" values(?,?,?,?,?,?)");
+			ps = conn.prepareStatement("insert into "+IUserConstants.TABLE_USER+" values(?,?,?,?,?,?,?)");
 			
 			ps.setString(1, user.getUserName());
 			ps.setLong(2, user.getMobileNo());
 			ps.setString(3, user.getEmailId());
 			ps.setString(4, user.getAddress());
-			ps.setInt(5, user.getPinCode());
-			ps.setString(6, user.getPassword());
+			ps.setString(5, user.getBillingAddress());
+			ps.setInt(6, user.getPinCode());
+			ps.setString(7, user.getPassword());
 			
 			int k = ps.executeUpdate();
 			
 			if(k>0) {
 				status = "User Registered Successfully!";
-				MailMessage.registrationSuccess(user.getEmailId(), user.getUserName().split(" ")[0]);
+				//MailMessage.registrationSuccess(user.getEmailId(), user.getUserName().split(" ")[0]);
 			}
 			
 		} catch (SQLException e) {

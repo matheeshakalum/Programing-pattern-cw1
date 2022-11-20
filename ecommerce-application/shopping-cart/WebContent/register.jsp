@@ -13,10 +13,16 @@
 	<%@ include file="header.html" %>
 	
   <div class="products" style="background-color: #E6F9E6;">
-	
-	<div class="tab" align="center" style="color:brown;">
+	<%
+	String msg="";
+	if(request.getAttribute("message")!=null)
+	{%>
+		<div class="tab" align="center" style="color:brown;">
 			<%=request.getAttribute("message") %>
-	</div>
+		</div>
+	<%}
+	%>
+	
 	<br>
 	
   	<div class="tab"  align="center">
@@ -33,7 +39,9 @@
             <tr><td><br></td><td><br></td></tr>
             <tr><td>Address</td><td><textarea name="address"style="font-size: 15px;font-weight: normal;width: 100%; height: 80px" required></textarea></td></tr>
             <tr><td><br></td><td><br></td></tr>
-            <tr><td>PinCode</td><td><input type="text" name="pincode"style="font-size: 15px;font-weight: normal;" required></td></tr>
+            <tr><td>Billing Address</td><td><textarea name="billaddress"style="font-size: 15px;font-weight: normal;width: 100%; height: 80px"></textarea></td></tr>
+            <tr><td><br></td><td><br></td></tr>
+            <tr><td>Postal Code</td><td><input type="text" name="pincode"style="font-size: 15px;font-weight: normal;" required></td></tr>
             <tr><td><br></td><td><br></td></tr>
             <tr><td>Password</td><td><input type="password" name="password"style="font-size: 15px;font-weight: normal;" required></td></tr>
             <tr><td><br></td><td><br></td></tr>

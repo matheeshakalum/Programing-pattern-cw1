@@ -15,7 +15,7 @@ public interface UserDao {
 	private String password;
 	*/
 	
-	public String registerUser(String userName,Long mobileNo,String emailId,String address,int pinCode,String password);
+	public String registerUser(String userName,Long mobileNo,String emailId,String address,String billingAddress,int pinCode,String password);
 	
 	public String registerUser(UserBean user);
 	
