@@ -3,7 +3,7 @@
 <%@ page import="com.digitalvision.dao.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
-<title>Ellison Electronics</title>
+<title>Digital Vision</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -21,8 +21,8 @@
 	%>
 <!--Company Header Starting  -->
 <div class="jumbotron text-center">
-  <h1>Ellison Electronics</h1>
-  <p>We specialize in Electronics</p>
+  <h1>Digital Vision</h1>
+  <p>providing high quality digital products</p>
   <form class="form-inline">
     <div class="input-group">
       <input type="text" class="form-control" size="50" placeholder="Search Items" required>
@@ -58,14 +58,14 @@
 			%>
 			
 			<li> <a href="cartDetails.jsp" style="margin:0px;padding:0px;" id="mycart"><i class="fa fa-shopping-cart fa-3x icon-white" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;" > 
- </i>Cart</a></li>
+ </i>Cart mona pakakda</a></li>
 			
 			<%
 				}
 				else{
 			%>
          <li> <a href="cartDetails.jsp" style="margin:0px;padding:0px;" id="mycart"><i data-count="<%=notf %>" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;" > 
- </i>Cart</a></li>
+ </i>Cart mona labbakda</a></li>
  				<% 
  					} 
  				%>

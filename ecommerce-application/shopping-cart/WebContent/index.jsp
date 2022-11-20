@@ -12,6 +12,8 @@
    <link rel="stylesheet" href="css/changes.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  
 </head>
 <body>
 
@@ -81,7 +83,8 @@
       <p class="price">Rs <%=product.getProdPrice() %> </p>
       <form method="post">
       	<button type="submit" formaction="<%= addToCartUrl%>">Add to Cart</button>&nbsp;&nbsp;&nbsp;
-      	<button type="submit" formaction="<%= buyNowUrl%>">Buy Now</button>
+   <!-- <button type="submit" formaction="<%= buyNowUrl%>">Buy Now</button>  -->
+      	<button onclick="window.location.href='cart.jsp;">Check Out</button>
       	<div><i class="fa-regular fa-heart fa-2x" style="cursor:pointer;"></i></div>
       </form>
     </div>
