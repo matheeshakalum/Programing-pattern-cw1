@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import com.digitalvision.beans.ProductBean;
+import com.digitalvision.beans.WishListBean;
 
 public interface ProductDao {
 
@@ -30,4 +31,5 @@ public interface ProductDao {
 	public boolean sellNProduct(String prodId,int n);
 	
 	public int getProductQuantity(String prodId);
+	
 }
