@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Online Shopping Card</title>
+<title>Digital Vision</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -109,7 +109,7 @@
     <% if(totAmount !=0) {%>
     <tr style="background-color:grey;color:white;"><td colspan="4" style="text-align:center;">
     	
-    	<td><form method="post"><button formaction="userHome.jsp" style="background-color:black;color:white;">Cancle</button></form></td>
+    	<td><form method="post"><button formaction="userHome.jsp" style="background-color:black;color:white;">Cancel</button></form></td>
     	<td colspan="2" align="center"><form method="post"><button style="background-color:blue;color:white;" formaction="payment.jsp?amount=<%=totAmount %>">Pay Now</button></form></td>
     	
     </tr>
