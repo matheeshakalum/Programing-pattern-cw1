@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
-
 import com.digitalvision.beans.CartBean;
 import com.digitalvision.beans.DemandBean;
 import com.digitalvision.beans.ProductBean;
