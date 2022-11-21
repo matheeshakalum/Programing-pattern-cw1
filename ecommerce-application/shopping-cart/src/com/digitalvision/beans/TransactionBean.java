@@ -117,12 +117,13 @@ public class TransactionBean implements Serializable{
 	}
 	
 	
-	public TransactionBean(String transactionId, String userName, Timestamp transDateTime, double transAmount, String status) {
+	public TransactionBean(String transactionId, String userName, Timestamp transDateTime, double transAmount,String shipAddress, String status) {
 		super();
 		this.transactionId = transactionId;
 		this.userName = userName;
 		this.transDateTime = transDateTime;
 		this.transAmount = transAmount;
+		this.shipAddress = shipAddress;
 		this.status = status;
 
 	}
