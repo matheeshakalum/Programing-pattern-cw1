@@ -207,5 +207,45 @@ public class OrderDaoImpl implements OrderDao{
 		
 		return orderList;
 	}
+	
+	
+	@Override
+	public List<OrderBean> getAllOrders(String transId) {
+		List<OrderBean> orderList = new ArrayList<OrderBean>();
+		
+		Connection con = DBUtil.provideConnection();
+		
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			ps = con.prepareStatement("select * from orders where transid=?");
+			
+			ps.setString(1, transId);
+			
+			rs = ps.executeQuery();
+			
+			
+			while(rs.next()) {
+				
+				OrderBean order = new OrderBean(rs.getString("transid"),rs.getString("prodid"),rs.getInt("quantity"),rs.getDouble("amount"),rs.getInt("shipped"));
+				
+				orderList.add(order);
+
+			}
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		
+		return orderList;
+	}
+	
+	
+	
 
 }

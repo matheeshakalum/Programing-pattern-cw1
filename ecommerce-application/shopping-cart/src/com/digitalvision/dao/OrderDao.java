@@ -16,4 +16,8 @@ public interface OrderDao {
 	public int countSoldItem(String prodId);
 	
 	public List<OrderBean> getAllOrders();
+	
+	public List<OrderBean> getAllOrders(String transId);
+	
+	
 }
