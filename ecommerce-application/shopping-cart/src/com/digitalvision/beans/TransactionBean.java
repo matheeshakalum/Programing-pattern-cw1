@@ -16,8 +16,6 @@ public class TransactionBean implements Serializable{
 	
 	private double transAmount;
 	
-	private String shippingAddress;
-	
 	private String status;
 	
 	
@@ -94,24 +92,16 @@ public class TransactionBean implements Serializable{
 	}
 	
 	
-	public TransactionBean(String transactionId, String userName, Timestamp transDateTime, double transAmount, String shippingAddress, String status) {
+	public TransactionBean(String transactionId, String userName, Timestamp transDateTime, double transAmount, String status) {
 		super();
 		this.transactionId = transactionId;
 		this.userName = userName;
 		this.transDateTime = transDateTime;
 		this.transAmount = transAmount;
-		this.shippingAddress = shippingAddress;
 		this.status = status;
 
 	}
 
-	public String getShippingAddress() {
-		return shippingAddress;
-	}
-
-	public void setShippingAddress(String shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
 
 	public String getStatus() {
 		return status;
