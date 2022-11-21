@@ -54,7 +54,7 @@
 					String userId = order.getUserName();
 					Date time = order.getTransDateTime();
 					double amount = order.getTransAmount();
-					String shippingAddress = order.getShippingAddress();
+					String shippingAddress = order.getShipAddress();
 					String status = order.getStatus();
 				%>
 
@@ -145,7 +145,7 @@
 		</div>
 	</div>
 
-	<%@ include file="footer.html"%>
+	<%@ include file="footer2.html"%>
 
 	<script type="text/javascript">
 		$(window).on('load', function() {
