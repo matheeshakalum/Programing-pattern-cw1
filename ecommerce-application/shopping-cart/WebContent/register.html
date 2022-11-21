@@ -4,14 +4,26 @@
 <title>Digital Vision-Register</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+ <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
    <link rel="stylesheet" href="css/changes.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  
+  
+  <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#DivContent").load("header.html");
+      $("#DivContent2").load("footer2.html");
+    });
+    </script>
 </head>
 <body>
+
 <!--Company Header Starting  -->
-<div class="jumbotron text-center">
+<!-- <div class="jumbotron text-center">
   <h1>Ellison Electronics</h1>
   <p>We specialize in Electronics</p>
   <form class="form-inline">
@@ -22,11 +34,11 @@
       </div>
     </div>
   </form>
-</div>
+</div> -->
 <!-- Company Header Ending -->
 
 <!-- Starting Navigation Bar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<!-- <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -51,15 +63,18 @@
             <li><a href="index.jsp">Laptops</a></li>
           </ul>
         </li>
-<!--         <li><a href="./SearchProd?ptype=?"><span class="glyphicon glyphicon-search"></span></a></li>
- -->      </ul>
+        <li><a href="./SearchProd?ptype=?"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 <!-- End of Navigation Bar -->
 
+
+<div id="DivContent"></div> <!-- header load -->
+
 <!-- Start of Login Form List -->
-<div class="products" style="background-color: #E6F9E6;">
+<!-- <div class="products" style="background-color: #E6F9E6;">
   <div class="tab"  align="center">
     
     <div style="margin: 5px">
@@ -89,14 +104,51 @@
       <a href="login.html">Existing User Login Here</a>
 
   </div>
-</div>
+</div> -->
+
+
+
+<div class="container">
+            <div class="row justify-content-center py-5 mt-5">
+                <div class="col col-12 col-md-8">
+                    <form action="./RegisterSrv" method="post" class="d-lg-flex flex-column justify-content-center" style="padding: 40px;background: #ffffff;box-shadow: 0px 0px 1px rgb(84,84,84);">
+                        
+                        <h1 class="login-heading">New here?</h1>
+                        <p class="login-para">Signing up is easy. It only takes a few steps<br></p>
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Name</label><input class="form-control" type="text" name="username" placeholder="name" required></div>
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Email</label><input class="form-control" type="email" name="email" placeholder="email" style="width: px;" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Password</label><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Postal Code</label><input class="form-control" type="text" name="pincode" placeholder="Postal Code" required></div>
+                        </div>
+                        
+                        <!-- <div class="form-row">
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Mobile No</label><input class="form-control" type="Phone" name="mobile" required></div>
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Address</label><textarea class="form-control" name="address"  required></textarea></div>
+                        </div> -->
+                        
+                        <div class="form-group"><label style="color: rgb(50,50,50);">Mobile No</label><input class="form-control" type="Phone" name="mobile" placeholder="Mobile number" required></div>
+                        <div class="form-group"><label style="color: rgb(50,50,50);">Address</label><textarea class="form-control" name="address"  required></textarea></div>
+                        
+                        
+                        <div class="form-group"><button class="btn btn-success btn-block btn-login" type="submit" name="submit">&nbsp;Register</button></div>
+                        <div class="form-group text-center"><a class="create-account-link" href="login.html">Already have an account? Login</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
 
 
 <!-- ENd of Product Items List -->
 
 
 <!-- Start the footer Contacts -->
-<a name="contact"></a>
+<!-- <a name="contact"></a>
 <div class="container">
   <h3 class="text-center">Contact</h3>
   <p class="text-center"><em>We love our fans!</em></p>
@@ -124,8 +176,11 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- End of Contact or about us -->
+
+
+<div id="DivContent2"></div><!-- footer load -->
 
 </body>
 </html>

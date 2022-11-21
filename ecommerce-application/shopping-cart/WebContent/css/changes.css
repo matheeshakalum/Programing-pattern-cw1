@@ -1,51 +1,51 @@
 /* Add a dark background color with a little bit see-through */
 
-.navbar {
+/* .navbar {
   margin-bottom: 0;
   background-color: #2d2d30;
   border: 0;
   font-size: 14px !important;
   letter-spacing: 4px;
   opacity: 0.9;
-}
+} */
 
 /* Add a gray color to all navbar links */
-.navbar li a, .navbar .navbar-brand {
+/* .navbar li a, .navbar .navbar-brand {
   color: #d5d5d5 !important;
 
-}
+} */
 
 /* On hover, the links will turn white */
-.navbar-nav li a:hover {
+/* .navbar-nav li a:hover {
   color: red !important;
 }
-
+ */
 /* The active link */
-.navbar-nav li.active a {
+/* .navbar-nav li.active a {
   color: #fff !important;
   background-color:#29292c !important;
-}
+} */
 
 /* Remove border color from the collapsible button */
-.navbar-default .navbar-toggle {
+/* .navbar-default .navbar-toggle {
   border-color: transparent;
-}
+} */
 
 /* Dropdown */
-.open .dropdown-toggle {
+/* .open .dropdown-toggle {
   color: #fff ;
   background-color: #555 !important;
-}
+} */
 
 /* Dropdown links */
-.dropdown-menu li a {
+/* .dropdown-menu li a {
   color: #000 !important;
 }
-
+ */
 /* On hover, the dropdown links will turn red */
-.dropdown-menu li a:hover {
+/* .dropdown-menu li a:hover {
   background-color: white !important;
-}
+} */
 
 /* Add a dark gray background color to the modal header and center text */
 
@@ -74,7 +74,7 @@ button:hover{
 .bg-1 p {font-style: italic;}
 
 .products{
-  background-color: #E6F9E6 !important;
+  /* background-color: #E6F9E6 !important; */
   padding:5%;
 }
 
@@ -143,15 +143,19 @@ button:hover{
   color: grey;
 }
 
+
 i {
-  width: 70px;
-  height: 50px;
+  /* width: 30px;
+  height:50px; */
   text-align: center;
-  vertical-align: middle;
+  vertical-align: center;
   position: relative;
+  background-color:white !important;
+  
 }
 
-.badge:after {
+
+ .badge:after {
   content: attr(data-count);
   position: absolute;
   background: #ff6600;
@@ -169,6 +173,7 @@ i {
   font-weight: bold;
 }
 i.fa::before{
-	font-size: 3rem !important;
+	font-size: 2rem !important;
 }
+
 
