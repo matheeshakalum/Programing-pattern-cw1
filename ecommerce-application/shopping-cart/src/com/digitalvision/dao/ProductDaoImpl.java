@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.digitalvision.beans.DemandBean;
 import com.digitalvision.beans.ProductBean;
+import com.digitalvision.beans.WishListBean;
 import com.digitalvision.utility.DBUtil;
 import com.digitalvision.utility.IDUtil;
 import com.digitalvision.utility.MailMessage;
@@ -459,5 +460,6 @@ public class ProductDaoImpl implements ProductDao{
 		
 		return quantity;
 	}
+	
 
 }

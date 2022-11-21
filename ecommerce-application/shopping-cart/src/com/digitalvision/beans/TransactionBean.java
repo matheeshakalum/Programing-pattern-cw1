@@ -19,6 +19,7 @@ public class TransactionBean implements Serializable{
 	private String status;
 	
 	
+	private String shipAddress;
 
 	
 	public TransactionBean() {
@@ -36,10 +37,33 @@ public class TransactionBean implements Serializable{
 
 	
 	
-	public TransactionBean(String userName, double transAmount) {
+	
+	/*
+	 * public TransactionBean(String userName, double transAmount) {
+	 * 
+	 * super(); this.userName = userName; this.transAmount = transAmount;
+	 * 
+	 * this.transactionId = IDUtil.generateTransId();
+	 * 
+	 * SimpleDateFormat sdf=new SimpleDateFormat("YYYY-MM-DD hh:mm:ss");
+	 * 
+	 * Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	 * 
+	 * sdf.format(timestamp);
+	 * 
+	 * //System.out.println(timestamp);
+	 * 
+	 * this.transDateTime = timestamp;
+	 * 
+	 * }
+	 */
+	 
+	
+	public TransactionBean(String userName, double transAmount, String shippingAddress) {
 		super();
 		this.userName = userName;
 		this.transAmount = transAmount;
+		this.shipAddress = shippingAddress;
 		
 		this.transactionId = IDUtil.generateTransId();
 		
@@ -54,6 +78,7 @@ public class TransactionBean implements Serializable{
 		this.transDateTime = timestamp;
 		
 	}
+
 
 
 
@@ -114,6 +139,20 @@ public class TransactionBean implements Serializable{
 	public String getTransactionId() {
 		return transactionId;
 	}
+
+	public String getShipAddress() {
+		return shipAddress;
+	}
+
+
+
+
+	public void setShipAddress(String shipAddress) {
+		this.shipAddress = shipAddress;
+	}
+
+
+
 
 	public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;

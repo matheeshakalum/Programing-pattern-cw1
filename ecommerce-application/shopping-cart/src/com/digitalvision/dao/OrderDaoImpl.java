@@ -18,7 +18,7 @@ import com.digitalvision.utility.MailMessage;
 public class OrderDaoImpl implements OrderDao{
 
 	@Override
-	public String paymentSuccess(String userName,double paidAmount) {
+	public String paymentSuccess(String userName,double paidAmount, String shipAddress) {
 		String status = "Order Placement Failed!";
 		
 		
@@ -29,7 +29,7 @@ public class OrderDaoImpl implements OrderDao{
 				return status;
 		
 		
-		TransactionBean transaction = new TransactionBean(userName,paidAmount) ;
+		TransactionBean transaction = new TransactionBean(userName,paidAmount,shipAddress) ;
 		
 		
 		PreparedStatement ps1 = null;
@@ -121,13 +121,13 @@ public class OrderDaoImpl implements OrderDao{
 		PreparedStatement ps = null;
 		
 		try {
-			ps = con.prepareStatement("insert into transactions values(?,?,?,?)");
+			ps = con.prepareStatement("insert into transactions values(?,?,?,?,?)");
 			
 			ps.setString(1, transaction.getTransactionId());
 			ps.setString(2, transaction.getUserName());
 			ps.setTimestamp(3, transaction.getTransDateTime());
 			ps.setDouble(4, transaction.getTransAmount());
-			
+			ps.setString(5, transaction.getShipAddress());
 			int k = ps.executeUpdate();
 			
 			if(k>0)

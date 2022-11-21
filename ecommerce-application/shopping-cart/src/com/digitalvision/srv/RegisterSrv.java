@@ -36,8 +36,9 @@ public class RegisterSrv extends HttpServlet {
 		String address = request.getParameter("address");
 		int pinCode = Integer.parseInt(request.getParameter("pincode"));
 		String password = request.getParameter("password");
+		String billaddress = request.getParameter("billaddress");
 		
-		UserBean user = new UserBean(userName,mobileNo,emailId,address,pinCode,password);
+		UserBean user = new UserBean(userName,mobileNo,emailId,address,billaddress,pinCode,password);
 		
 		UserDaoImpl dao = new UserDaoImpl();
 		

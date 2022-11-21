@@ -7,11 +7,13 @@
 <title>Online Shopping Card</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-   <link rel="stylesheet" href="css/changes.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  
+ 
+   	<link rel="stylesheet" href="css/changes.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   
 </head>
 <body>
@@ -110,7 +112,8 @@
     <tr style="background-color:grey;color:white;"><td colspan="4" style="text-align:center;">
     	
     	<td><form method="post"><button formaction="userHome.jsp" style="background-color:black;color:white;">Cancle</button></form></td>
-    	<td colspan="2" align="center"><form method="post"><button style="background-color:blue;color:white;" formaction="payment.jsp?amount=<%=totAmount %>">Pay Now</button></form></td>
+    	<td colspan="2" align="center"><form method="post"><button style="background-color:blue;color:white;" formaction="orderConfiramtion.jsp">Confirm Order</button></form></td>
+    <!--<td colspan="2" align="center"><form method="post"><button style="background-color:blue;color:white;" formaction="payment.jsp?amount=<%=totAmount %>">Pay Now</button></form></td>  -->
     	
     </tr>
     <%} %>
@@ -120,7 +123,7 @@
 <!-- ENd of Product Items List -->
 
 
-<%@ include file="footer.html" %>
+<%@ include file="footer2.html" %>
 
 </body>
 </html>
