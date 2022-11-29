@@ -7,16 +7,9 @@
 <title>Digital Vision</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
-  
-   <link rel="stylesheet" href="css/changes.css">
+  <link rel="stylesheet" href="css/changes.css">
    
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> -->
-  
-  	
- 
+
 </head>
 <body>
 
@@ -79,58 +72,7 @@
         </div>
     </section>
 
-<!-- Start of Product Items List -->
-<%-- <div class="products" >
-<div class="row text-center" >
 
-	
-
-  <%
-  
-  	ProductDaoImpl prodDao = new ProductDaoImpl(); 
-  	
-  	List<ProductBean> products = new ArrayList<ProductBean>();
-  	
-  	products = prodDao.getAllProducts();
-  	
-  	for(ProductBean product : products){
-  	
-  		String addToCartUrl = null;
-  		String buyNowUrl = null;
-  		
-  		if(isValidUser){
-  			addToCartUrl = "./AddtoCart?uid="+userName+"&pid="+product.getProdId()+"";
-  			buyNowUrl = "./BuyNow?uid="+userName+"&pid="+product.getProdId()+"";
-  		}
-  		else{
-  			addToCartUrl = "login.html";
-  			buyNowUrl = "login.html";
-  		}
-  		
-  %>
-  
-  <div class="col-sm-4">
-    <div class="img-thumbnail">
-      <img src="./ShowImage?pid=<%=product.getProdId() %>" alt="Product" style="height:200px; max-width:200px; max-width:300px;">
-      <p class="productname"><%=product.getProdName() %> ( <%=product.getProdId() %> ) </p>
-      <p class="productinfo"><%=product.getProdInfo() %></p>
-      <p class="price">Rs <%=product.getProdPrice() %> </p>
-      <form method="post">
-      	<button type="submit" formaction="<%= addToCartUrl%>">Add to Cart</button>&nbsp;&nbsp;&nbsp;
-      	<button type="submit" formaction="<%= buyNowUrl%>">Buy Now</button>
-      </form>
-    </div>
-  </div>
-  
-  <%
-  
-  	}
-  
-  %>
-  
-</div>
-</div> --%>
-<!-- ENd of Product Items List -->
 
 
 	<div class="container">	<!-- Start of new Product Items List -->
