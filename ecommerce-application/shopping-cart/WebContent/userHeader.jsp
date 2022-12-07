@@ -150,17 +150,36 @@
         <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100%;max-width: 960px;">
             <h1 style="font-size: 50px;color: rgb(91,89,89);">Digital Vision</h1>
             <p>providing high quality digital products</p>
-            <form>
+           <!--   <form>
                 <div class="input-group">
                     <input class="form-control" type="text">
+        
+                    
                     <div class="input-group-append"><button class="btn btn-success" type="button">Go!</button></div>
                 </div>
-            </form>
+            </form>  -->
+             <form>
+              <div class="input-group">
+                    <input class="form-control" id="searchProductUser" type="text" name="searchProductUser">
+                    <div class="input-group-append"><a ><button class="btn btn-success" style="margin-left: 8px !important" onClick="searchProduct()">Go!</button></a></div>
+                </div>
+                </form>
  		<p  align="center" style="color:blue;font-weight:bold;margin-top:15px;" id="message"></p>           
         </div>
         
     </section>
-
+    
+<!--  <script type="text/javascript">
+ function searchProduct() {
+	
+	 var sarchv=document.getElementById("searchProductUser").value;
+	 console.log("???????????????"+sarchv);
+	 
+	 window.location.href="userHome.jsp?searchProductUser="+sarchv;
+	
+}
+ 
+ </script> -->
 	<script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
