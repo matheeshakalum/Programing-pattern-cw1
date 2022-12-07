@@ -20,6 +20,8 @@ public interface ProductDao {
 	
 	public List<ProductBean> getAllProducts();
 	
+	public List<ProductBean> getAllProducts(String Productname);
+	
 	public byte[] getImage(String prodId);
 	
 	public ProductBean getProductDetails(String prodId);
