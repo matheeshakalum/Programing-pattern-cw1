@@ -38,14 +38,19 @@ public class AddtoCart extends HttpServlet {
 		if(userName == null || password==null){
 	
 			response.sendRedirect("loginFirst.jsp");
-		}	
-		
+		}
+		int pQty=0;
+		String prodId = request.getParameter("pid");
 		//login Check Successfull
-		
+		if(prodId!=null)
+		{
+			pQty = Integer.parseInt(request.getParameter("pqty")); //1
+			response.sendRedirect("index.jsp");
+		}
 		
 		String userId = userName;
-		String prodId = request.getParameter("pid");		
-		int pQty = Integer.parseInt(request.getParameter("pqty")); //1
+				
+		
 		
 		CartDaoImpl cart = new CartDaoImpl();
 		
