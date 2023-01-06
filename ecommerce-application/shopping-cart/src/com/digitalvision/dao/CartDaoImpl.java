@@ -33,16 +33,15 @@ public class CartDaoImpl implements CartDao{
 			
 			rs = ps.executeQuery();
 			
-			if(rs.next()) {
+			if(rs.next()) { //If the product is already in the cart
 				
 				int cartQuantity = rs.getInt("quantity");
-				
+
 				ProductBean product = new ProductDaoImpl().getProductDetails(prodId);
-				
 				int availableQty = product.getProdQuantity();
-				
+			
 				prodQty += cartQuantity;
-				//
+				
 				if(availableQty < prodQty) {
 					
 					status = updateProductToCart(userId, prodId, availableQty);
