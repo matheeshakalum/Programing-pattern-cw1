@@ -67,8 +67,13 @@
                     <h1 style="color: rgb(91,89,89);">Best sellings</h1>
                     <p style="color: rgb(120,119,119);">Here are our best selling's products</p>
                 </div>
-            </div>
-            
+                     <form method="post" style="margin-left: 17px !important;">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="searchProduct">
+                    <div class="input-group-append"><a ><button class="btn btn-success" style="margin-left: 8px !important" type="submit">Go!</button></a></div>
+                </div>
+            </form>
+            </div>      
         </div>
     </section>
 
@@ -83,11 +88,25 @@
 		
 		<%
   
-  			ProductDaoImpl prodDao = new ProductDaoImpl(); 
+		String searchpro = request.getParameter("searchProduct");
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>  "+ searchpro);
+		/* String searchpro="ra"; */
+  		ProductDaoImpl prodDao = new ProductDaoImpl(); 
   	
   		List<ProductBean> products = new ArrayList<ProductBean>();
+  		
+  		List<ProductBean> products1 = new ArrayList<ProductBean>();
+  		
   	
-  		products = prodDao.getAllProducts();
+  		products1 = prodDao.getAllProducts();
+  		if(searchpro != null && !searchpro.isEmpty() && !searchpro.equals("")){
+  			
+  			products=prodDao.filterByNameList(products1, searchpro);
+  			
+  		}else{
+  			products=products1;
+  		}
+  		
   	
   		for(ProductBean product : products){
   	

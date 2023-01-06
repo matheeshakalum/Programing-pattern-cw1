@@ -58,11 +58,38 @@
                     <h1 style="color: rgb(91,89,89);">Best sellings</h1>
                     <p style="color: rgb(120,119,119);">Here are our best selling's products</p>
                 </div>
+                      <!-- <form method="post" style="margin-left: 17px !important;"> -->
+              <!--   <div class="input-group">
+                    <input class="form-control" id="searchProductUser" type="text" name="searchProductUser">
+                    <div class="input-group-append"><a ><button class="btn btn-success" style="margin-left: 8px !important" onClick="searchProduct()">Go!</button></a></div>
+                </div> -->
+            <!-- </form> -->
             </div>
             
         </div>
     </section>
  
+ <script type="text/javascript">
+ function searchProduct() {
+	
+	 var sarchv=document.getElementById("searchProductUser").value;
+	 console.log("???????????????"+sarchv);
+	 
+	 window.location.href="userHome.jsp?searchProductUser="+sarchv;
+	
+}
+
+ $(window).on('load', function() {
+		var url = new URL(window.location.href);
+		var id = url.searchParams.get("searchProductUser");
+		if (id != null) {
+			document.getElementById("searchProductUser").value=id;
+		}
+		
+
+	});
+ 
+ </script> 
  
  
 
@@ -74,11 +101,27 @@
 		
 		
 		<%
+		
+		String searchpro = request.getParameter("searchProductUser");
+		//String searchpro = "ra";
+		System.out.println("#################################  "+ searchpro);
+		
   	WishListDao wishlist = new WishListDaoImpl();
 	
   	ProductDaoImpl prodDao = new ProductDaoImpl(); 
   	List<ProductBean> products = new ArrayList<ProductBean>();
   	products = prodDao.getAllProducts();
+  	
+  	List<ProductBean> products1 = new ArrayList<ProductBean>();
+  	
+  	products1 = prodDao.getAllProducts();
+		if(searchpro != null && !searchpro.isEmpty() && !searchpro.equals("")){
+			
+			products=prodDao.filterByNameList(products1, searchpro);
+			
+		}else{
+			products=products1;
+		}
   	
   	for(ProductBean product : products){
   		
