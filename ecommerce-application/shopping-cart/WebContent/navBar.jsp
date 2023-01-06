@@ -23,39 +23,6 @@
 </head>
 <body>
 
-<!-- Starting Navigation Bar -->
-<!-- <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.jsp"><span class="glyphicon glyphicon-home">&nbsp;</span>Shopping Center</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="loginFirst.jsp"> <span class="glyphicon glyphicon-shopping-cart"></span>Cart html</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">CATEGORIES
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="index.jsp">Mobiles</a></li>
-            <li><a href="index.jsp">Tvs</a></li>
-            <li><a href="index.jsp">Laptops</a></li>
-          </ul>
-        </li>
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-<!-- End of Navigation Bar -->
-
 
 
  <nav class="navbar navbar-light navbar-expand-lg fixed-top navigation-clean">
