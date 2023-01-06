@@ -106,9 +106,7 @@
                         </tr>
                         <tr></tr>
     
- 					</tbody>
-                </table>
-			</div>
+ 					
 		
 			
      		
@@ -117,6 +115,9 @@
 			}
   %>
   
+  					</tbody>
+                </table>
+			</div>
   
   <%
   

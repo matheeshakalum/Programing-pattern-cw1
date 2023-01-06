@@ -102,19 +102,27 @@
 		
 		<%
 		
-		String searchpro = request.getParameter("searchProductUser");
+		
 		//String searchpro = "ra";
-		System.out.println("#################################  "+ searchpro);
+		/* System.out.println("#################################  "+ searchpro); */
 		
   	WishListDao wishlist = new WishListDaoImpl();
 	
   	ProductDaoImpl prodDao = new ProductDaoImpl(); 
+  	
   	List<ProductBean> products = new ArrayList<ProductBean>();
+  	
   	products = prodDao.getAllProducts();
   	
   	List<ProductBean> products1 = new ArrayList<ProductBean>();
-  	
+  	String searchpro = "";
   	products1 = prodDao.getAllProducts();
+  	if(request.getParameter("searchProductUser")!= null){
+  		
+  	 searchpro = request.getParameter("searchProductUser");
+  	}
+  	
+  	
 		if(searchpro != null && !searchpro.isEmpty() && !searchpro.equals("")){
 			
 			products=prodDao.filterByNameList(products1, searchpro);

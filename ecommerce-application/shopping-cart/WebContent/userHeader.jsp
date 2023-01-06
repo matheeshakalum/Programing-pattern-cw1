@@ -140,7 +140,6 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="userWishList.jsp">Wish List</a></li>
                     <li class="nav-item"><a class="nav-link" href="userOrders.jsp">My Orders</a></li>
-                    <li class="nav-item"><a class="nav-link" href="userHome.jsp">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="./LogoutSrv">logout</a></li>
                 </ul>
             </div>

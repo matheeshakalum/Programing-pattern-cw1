@@ -88,24 +88,33 @@
 		
 		<%
   
-		String searchpro = request.getParameter("searchProduct");
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>  "+ searchpro);
-		/* String searchpro="ra"; */
-  		ProductDaoImpl prodDao = new ProductDaoImpl(); 
-  	
+		ProductDaoImpl prodDao = new ProductDaoImpl(); 
+	  	
   		List<ProductBean> products = new ArrayList<ProductBean>();
   		
   		List<ProductBean> products1 = new ArrayList<ProductBean>();
   		
-  	
-  		products1 = prodDao.getAllProducts();
-  		if(searchpro != null && !searchpro.isEmpty() && !searchpro.equals("")){
-  			
-  			products=prodDao.filterByNameList(products1, searchpro);
-  			
-  		}else{
-  			products=products1;
-  		}
+		String searchpro ="";
+		products1 = prodDao.getAllProducts();
+		if(request.getParameter("searchProduct")!=null)
+		{
+			searchpro=request.getParameter("searchProduct");
+			//products1 = prodDao.getAllProducts();
+	  		
+	  		
+		}
+		
+		//System.out.println(">>>>>>>>>>>>>>>>>>>>>  "+ searchpro);
+		/* String searchpro="ra"; */
+  		
+  		
+  	if(searchpro != null && !searchpro.isEmpty() && !searchpro.equals("")){
+	  			
+	  			products=prodDao.filterByNameList(products1, searchpro);
+	  			
+	  		}else{
+	  			products=products1;
+	  		}
   		
   	
   		for(ProductBean product : products){
