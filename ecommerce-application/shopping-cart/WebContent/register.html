@@ -2,20 +2,18 @@
 <html>
 <head>
 <title>Digital Vision-Register</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<link rel="stylesheet" href="css/changes.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-
-
-<script src="jquery.js"></script>
-<script> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
+  <link rel="stylesheet" href="css/changes.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  
+  
+  <script src="jquery.js"></script> 
+    <script> 
     $(function(){
       $("#DivContent").load("header.html");
       $("#DivContent2").load("footer2.html");
@@ -27,86 +25,48 @@
 
 
 
-	<div id="DivContent"></div>
-	<!-- header load -->
+<div id="DivContent"></div> <!-- header load -->
 
 
 
-	<div class="container">
-		<div class="row justify-content-center py-5 mt-5">
-			<div class="col col-12 col-md-8">
-				<form action="./RegisterSrv" method="post"
-					class="d-lg-flex flex-column justify-content-center"
-					style="padding: 40px; background: #ffffff; box-shadow: 0px 0px 1px rgb(84, 84, 84);">
-
-					<h1 class="login-heading">New here?</h1>
-					<p class="login-para">
-						Signing up is easy. It only takes a few steps<br>
-					</p>
-					<div class="form-row">
-						<div class="form-group col-md-6">
-							<label style="color: rgb(50, 50, 50);">Name</label><input
-								class="form-control" type="text" name="username"
-								placeholder="name" required>
-						</div>
-						<div class="form-group col-md-6">
-							<label style="color: rgb(50, 50, 50);">Email</label><input
-								class="form-control" type="email" name="email"
-								placeholder="email" style="width: px;" required>
-						</div>
-					</div>
-					<div class="form-row">
-						<div class="form-group col-md-6">
-							<label style="color: rgb(50, 50, 50);">Password</label><input
-								class="form-control" type="password" name="password"
-								placeholder="Password" required>
-						</div>
-						<div class="form-group col-md-6">
-							<label style="color: rgb(50, 50, 50);">Postal Code</label><input
-								class="form-control" type="text" name="pincode"
-								placeholder="Postal Code" required>
-						</div>
-					</div>
-
-					<!-- <div class="form-row">
+<div class="container">
+            <div class="row justify-content-center py-5 mt-5">
+                <div class="col col-12 col-md-8">
+                    <form action="./RegisterSrv" method="post" class="d-lg-flex flex-column justify-content-center" style="padding: 40px;background: #ffffff;box-shadow: 0px 0px 1px rgb(84,84,84);">
+                        
+                        <h1 class="login-heading">New here?</h1>
+                        <p class="login-para">Signing up is easy. It only takes a few steps<br></p>
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Name</label><input class="form-control" type="text" name="username" placeholder="name" required></div>
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Email</label><input class="form-control" type="email" name="email" placeholder="email" style="width: px;" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Password</label><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Postal Code</label><input class="form-control" type="text" name="pincode" placeholder="Postal Code" required></div>
+                        </div>
+                        
+                        <!-- <div class="form-row">
                             <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Mobile No</label><input class="form-control" type="Phone" name="mobile" required></div>
                             <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Address</label><textarea class="form-control" name="address"  required></textarea></div>
                         </div> -->
-
-					<div class="form-group">
-						<label style="color: rgb(50, 50, 50);">Mobile No</label><input
-							class="form-control" type="Phone" name="mobile"
-							placeholder="Mobile number" required>
-					</div>
-					<div class="form-group">
-						<label style="color: rgb(50, 50, 50);">Dilevery Address</label>
-						<textarea class="form-control" name="address" required></textarea>
-					</div>
-					<div class="form-group">
-						<label style="color: rgb(50, 50, 50);">Billing Address</label>
-						<textarea class="form-control" name="billaddress" required></textarea>
-					</div>
-
-					<div class="form-group">
-						<button class="btn btn-success btn-block btn-login" type="submit"
-							name="submit">&nbsp;Register</button>
-					</div>
-					<div class="form-group text-center">
-						<a class="create-account-link" href="login.html">Already have
-							an account? Login</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+                        
+                        <div class="form-group"><label style="color: rgb(50,50,50);">Mobile No</label><input class="form-control" type="Phone" name="mobile" placeholder="Mobile number" required></div>
+                        <div class="form-group"><label style="color: rgb(50,50,50);">Dilevery Address</label><textarea class="form-control" name="address"  required></textarea></div>
+                        <div class="form-group"><label style="color: rgb(50,50,50);">Billing Address</label><textarea class="form-control" name="billaddress"  required></textarea></div>
+                        
+                        <div class="form-group"><button class="btn btn-success btn-block btn-login" type="submit" name="submit">&nbsp;Register</button></div>
+                        <div class="form-group text-center"><a class="create-account-link" href="login.html">Already have an account? Login</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
 
 
 
 
-	<div id="DivContent2"></div>
-	<!-- footer load -->
+<div id="DivContent2"></div><!-- footer load -->
 
 </body>
 </html>
