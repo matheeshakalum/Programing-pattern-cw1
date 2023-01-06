@@ -114,7 +114,8 @@ public class JavaMailUtil {
 			rs = ps.executeQuery();
 			if(rs.next()) {
 			String emailId = rs.getString("email");
-			String passWord = rs.getString("password");
+			/* String passWord = rs.getString("password"); */
+			String passWord = "tekgbdslrysdkdye";
 			
 			properties.put("mail.user", emailId);
 			properties.put("mail.password", passWord);

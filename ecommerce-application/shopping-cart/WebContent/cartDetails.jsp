@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
- 
+ 	
    	<link rel="stylesheet" href="css/changes.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -53,18 +53,24 @@
 
 <%@ include file="userHeader.jsp" %>
 
-	<!-- <script>document.getElementById('mycart').innerHTML='<i data-count="20" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;"></i>'</script>
- -->
-<!-- Start of Product Items List -->
-<div class="products" style="background-color: #E6F9E6;">
 
-	<table class="table table-hover" >
-		<thead style="background-color:red;color:white;font-size:20px;font-weight:bold;">
-			<tr> 
-     			 <th>Picture </th> <th> Products </th> <th>Price</th> <th>Quantity</th> <th>Add</th><th>Remove</th><th style="background-color:green;">Amount</th>
-     		</tr>
-		</thead>
-		<tbody style="background-color:white;font-size:20px;font-weight:bold;">	
+				
+		<section id="table" style="margin-top:100px;">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Picture</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Add</th>
+                            <th>Remove</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 		
 		
   	
@@ -89,37 +95,51 @@
 			if(prodQuantity>0){
 %>
   	
-  	   <tr> <td><img src="./ShowImage?pid=<%=product.getProdId() %>"  style="width:50px;height:50px;"></td> <td><%=product.getProdName() %></td> 
-     				<td><%=product.getProdPrice() %></td> 
-     				<td><form method="post" action="./UpdateToCart">
-     						<input type="number" name="pqty" value="<%= prodQuantity %>" style="max-width:70px;" min="0">
-     						<input type="hidden" name="pid" value="<%= product.getProdId()%>">
-     						<input type="submit" name="Update" value="Update" style="max-width:80px;">
-     					</form></td> 
-     				<td><a href="cartDetails.jsp?add=1&uid=<%=userName %>&pid=<%= product.getProdId()%>"><i class="fa fa-plus"></i></a></td>
-     				<td><a href="cartDetails.jsp?add=0&uid=<%=userName %>&pid=<%= product.getProdId()%>"><i class="fa fa-minus"></i></a>
-     				</td>
-     				<td><%=currAmount %></td>
-		</tr>  		
+  	   
+		
+		
+		
+						<tr>
+                            <td><img src="./ShowImage?pid=<%=product.getProdId() %>"  style="width:50px;height:50px;"></td>
+                            <td><%=product.getProdName() %></td>
+                            <td><%=product.getProdPrice() %></td>
+                            <td><input class="form-control" type="number" name="pqty" value="<%= prodQuantity %>" style="max-width:70px;" min="0" readonly=""></td>
+                            <td><a href="cartDetails.jsp?add=1&uid=<%=userName %>&pid=<%= product.getProdId()%>"><i class="fa fa-plus" style="background-color: transparent !important"></i></a></td>
+                            <td><a href="cartDetails.jsp?add=0&uid=<%=userName %>&pid=<%= product.getProdId()%>"><i class="fa fa-minus" style="background-color: transparent !important"></i></a>
+                            <td><%=currAmount %></td>
+                        </tr>
+                        <tr></tr>
+    
+ 					
      		
 <%
   		} 
 			}
   %>
   
-  	<tr style="background-color:grey;color:white;"><td colspan="6" style="text-align:center;">Total Amount to Pay (in Rupees)</td><td><%=totAmount %></td></tr>
+  	
+    
+    
+    
+    <tr ><td colspan="6" style="text-align:center;">Total Amount to Pay (in Rupees)</td><td><%=totAmount %></td></tr>
     <% if(totAmount !=0) {%>
-    <tr style="background-color:grey;color:white;"><td colspan="4" style="text-align:center;">
+    <tr ><td colspan="4" style="text-align:center;">
     	
-    	<td><form method="post"><button formaction="userHome.jsp" style="background-color:black;color:white;">Cancle</button></form></td>
-    	<td colspan="2" align="center"><form method="post"><button style="background-color:blue;color:white;" formaction="orderConfiramtion.jsp">Confirm Order</button></form></td>
-    <!--<td colspan="2" align="center"><form method="post"><button style="background-color:blue;color:white;" formaction="payment.jsp?amount=<%=totAmount %>">Pay Now</button></form></td>  -->
+    	<td><form method="post"><button formaction="userHome.jsp" class="btn btn-dark">Keep Shopping</button></form></td>
+    	<td colspan="2" align="center"><form method="post"><button class="btn btn-success" formaction="orderConfiramtion.jsp">Confirm Order</button></form></td>
+    
     	
     </tr>
+    
+    
+    
     <%} %>
-  </tbody>
-</table>
-</div>
+ 
+
+
+					</tbody>
+                </table>
+			</div>  		
 <!-- ENd of Product Items List -->
 
 
