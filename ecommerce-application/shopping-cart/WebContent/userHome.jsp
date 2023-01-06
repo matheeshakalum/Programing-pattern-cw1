@@ -73,8 +73,6 @@
  function searchProduct() {
 	
 	 var sarchv=document.getElementById("searchProductUser").value;
-	 console.log("???????????????"+sarchv);
-	 
 	 window.location.href="userHome.jsp?searchProductUser="+sarchv;
 	
 }
