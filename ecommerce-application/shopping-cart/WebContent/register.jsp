@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Password</label><input class="form-control" type="password" name="password" placeholder="Password" required></div>
-                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Postal Code</label><input class="form-control" type="text" name="pincode" placeholder="Postal Code" required></div>
+                            <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Postal Code</label><input class="form-control" type="number" name="pincode" placeholder="Postal Code" required></div>
                         </div>
                         
                         <!-- <div class="form-row">
@@ -47,7 +47,7 @@
                             <div class="form-group col-md-6"><label style="color: rgb(50,50,50);">Address</label><textarea class="form-control" name="address"  required></textarea></div>
                         </div> -->
                         
-                        <div class="form-group"><label style="color: rgb(50,50,50);">Mobile No</label><input class="form-control" type="Phone" name="mobile" placeholder="Mobile number" required></div>
+                        <div class="form-group"><label style="color: rgb(50,50,50);">Mobile No</label><input class="form-control" type="number" maxlength="10" name="mobile" placeholder="Mobile number" required></div>
                         <div class="form-group"><label style="color: rgb(50,50,50);">Delivery Address</label><textarea class="form-control" name="address"  required></textarea></div>
                         <div class="form-group"><label style="color: rgb(50,50,50);">Billing Address</label><textarea class="form-control" name="billaddress"  required></textarea></div>
                         
