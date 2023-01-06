@@ -87,7 +87,11 @@
 
 
 <div class="container">	<!-- Start of new Product Items List -->
-
+			<div class="row py-5">
+               <div class="col-8 offset-2 text-center">
+                   <h1 style="font-size: 35px;">Wish List</h1>
+               </div>
+           </div>
 		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
 		
 		
