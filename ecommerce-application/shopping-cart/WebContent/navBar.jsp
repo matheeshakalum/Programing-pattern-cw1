@@ -44,12 +44,12 @@
         <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100%;max-width: 960px;">
             <h1 style="font-size: 50px;color: rgb(91,89,89);">Digital Vision</h1>
             <p>providing high quality digital products</p>
-            <form>
+            <!-- <form>
                 <div class="input-group">
                     <input class="form-control" type="text">
                     <div class="input-group-append"><button class="btn btn-success" type="button">Go!</button></div>
                 </div>
-            </form>
+            </form> -->
         </div>
     </section>
     

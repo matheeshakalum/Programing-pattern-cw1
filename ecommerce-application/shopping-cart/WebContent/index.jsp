@@ -66,13 +66,16 @@
                 <div class="col-8 offset-2 text-center align-self-center">
                     <h1 style="color: rgb(91,89,89);">Best sellings</h1>
                     <p style="color: rgb(120,119,119);">Here are our best selling's products</p>
+                    
+                    <form method="post" style="margin-left: 17px !important;">
+                		<div class="input-group">
+		                    <input class="form-control" type="text" name="searchProduct">
+		                    <div class="input-group-append"><a ><button class="btn btn-success" style="margin-left: 8px !important" type="submit">Search</button></a></div>
+                		</div>
+            		</form>
+                    
                 </div>
-                     <form method="post" style="margin-left: 17px !important;">
-                <div class="input-group">
-                    <input class="form-control" type="text" name="searchProduct">
-                    <div class="input-group-append"><a ><button class="btn btn-success" style="margin-left: 8px !important" type="submit">Go!</button></a></div>
-                </div>
-            </form>
+             
             </div>      
         </div>
     </section>
