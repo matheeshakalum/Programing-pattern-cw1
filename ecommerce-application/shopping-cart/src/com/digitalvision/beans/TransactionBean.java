@@ -15,6 +15,11 @@ public class TransactionBean implements Serializable{
 	private Timestamp transDateTime;
 	
 	private double transAmount;
+	
+	private String status;
+	
+	
+	private String shipAddress;
 
 	
 	public TransactionBean() {
@@ -32,10 +37,33 @@ public class TransactionBean implements Serializable{
 
 	
 	
-	public TransactionBean(String userName, double transAmount) {
+	
+	/*
+	 * public TransactionBean(String userName, double transAmount) {
+	 * 
+	 * super(); this.userName = userName; this.transAmount = transAmount;
+	 * 
+	 * this.transactionId = IDUtil.generateTransId();
+	 * 
+	 * SimpleDateFormat sdf=new SimpleDateFormat("YYYY-MM-DD hh:mm:ss");
+	 * 
+	 * Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	 * 
+	 * sdf.format(timestamp);
+	 * 
+	 * //System.out.println(timestamp);
+	 * 
+	 * this.transDateTime = timestamp;
+	 * 
+	 * }
+	 */
+	 
+	
+	public TransactionBean(String userName, double transAmount, String shippingAddress) {
 		super();
 		this.userName = userName;
 		this.transAmount = transAmount;
+		this.shipAddress = shippingAddress;
 		
 		this.transactionId = IDUtil.generateTransId();
 		
@@ -50,6 +78,7 @@ public class TransactionBean implements Serializable{
 		this.transDateTime = timestamp;
 		
 	}
+
 
 
 
@@ -86,10 +115,45 @@ public class TransactionBean implements Serializable{
 		this.transAmount = transAmount;
 
 	}
+	
+	
+	public TransactionBean(String transactionId, String userName, Timestamp transDateTime, double transAmount,String shipAddress, String status) {
+		super();
+		this.transactionId = transactionId;
+		this.userName = userName;
+		this.transDateTime = transDateTime;
+		this.transAmount = transAmount;
+		this.shipAddress = shipAddress;
+		this.status = status;
+
+	}
+
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getTransactionId() {
 		return transactionId;
 	}
+
+	public String getShipAddress() {
+		return shipAddress;
+	}
+
+
+
+
+	public void setShipAddress(String shipAddress) {
+		this.shipAddress = shipAddress;
+	}
+
+
+
 
 	public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;

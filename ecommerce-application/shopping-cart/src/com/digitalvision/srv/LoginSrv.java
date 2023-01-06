@@ -2,6 +2,7 @@ package com.digitalvision.srv;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -50,9 +51,7 @@ public class LoginSrv extends HttpServlet {
 				session.setAttribute("password", password);
 				session.setAttribute("usertype", userType);
 				
-				
 				rd.forward(request, response);
-				
 				
 			}
 			else {
@@ -67,39 +66,89 @@ public class LoginSrv extends HttpServlet {
 		}
 		else {  //Login as customer
 			
-			 UserDaoImpl udao = new UserDaoImpl();
+			HttpSession session = request.getSession();
+			int loginAttempt;
+			boolean isLoginPossible=false;
 			
-			 status = udao.isValidCredential(userName, password);
-			 
-			 if(status.equalsIgnoreCase("valid")) {
-				 //valid user
-				 
+            if (session.getAttribute("loginCount") == null)
+            {
+            	session.setAttribute("loginCount", 0);
+                loginAttempt = 0;
+            }
+            else
+            {
+                loginAttempt = (Integer)session.getAttribute("loginCount");
+              
+            }
+            System.out.print(loginAttempt);
+            if (loginAttempt >= 2 )
+            {
+            	
+                long lastAccessedTime = 
+                session.getLastAccessedTime();
+                Date date = new Date();
+                long currentTime = date.getTime();
+                long timeDiff = currentTime - lastAccessedTime;
+                // 10 minutes in milliseconds
+                if (timeDiff >= 600000)
+                {
+                    //invalidate user session, so they can try again
+                	isLoginPossible=true;
+                	session.setAttribute("loginCount", 0);
+                }
+                else
+                {
+                    // Error message
+                    status="You have  exceeded the 3 failed login attempt. Please try loggin in in 10 minutes.";
+                    isLoginPossible=false;
+                }
+                
+            }
+            else
+            {
+            	loginAttempt++;   
+            	session.setAttribute("loginCount", loginAttempt);
+            	isLoginPossible=true;
+            }
+			
+			
+			 if (isLoginPossible==true)
+	         {
+				 UserDaoImpl udao = new UserDaoImpl();
 				 UserBean user = udao.getUserDetails(userName, password);
-				 
-				 HttpSession session = request.getSession();
-				 
-				 session.setAttribute("userdata", user);
-				 
-				 session.setAttribute("username", userName);
-				 session.setAttribute("password", password);
-				 session.setAttribute("usertype", userType);
-				 
-				 RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
-				 
-				 rd.forward(request, response);
-				 
-			 }
-			 else {
-				 //invalid user;
-				 
-				RequestDispatcher rd = request.getRequestDispatcher("login.html");
-					
-				rd.include(request, response);
-				
+				 status = udao.isValidCredential(userName, password);
+
+				 if(status.equalsIgnoreCase("valid")) {
+					 //valid user
+					 
+					 session.setAttribute("userdata", user);
+					 
+					 session.setAttribute("username", userName);
+					 session.setAttribute("password", password);
+					 session.setAttribute("usertype", userType);
+					 
+					 session.setAttribute("loginCount", 0);
+					 
+					 RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
+					 rd.forward(request, response);
+					 
+				 }
+				 else {
+					 //invalid user;
+					RequestDispatcher rd = request.getRequestDispatcher("login.html");	
+					rd.include(request, response);
+					pw.println("<script>document.getElementById('message').innerHTML='"+status+"'</script>");
+					 
+					 
+				 }
+	         }
+			 else
+			 {
+				RequestDispatcher rd = request.getRequestDispatcher("login.html");	
+				rd.include(request, response);	
 				pw.println("<script>document.getElementById('message').innerHTML='"+status+"'</script>");
-				 
-				 
 			 }
+			
 			
 		}
 		

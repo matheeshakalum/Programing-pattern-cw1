@@ -21,7 +21,8 @@
 		</div>
 	</div>
 	 -->
-<div class="products" style="background-color: #E6F9E6;">
+	 
+<!-- <div class="products" style="background-color: #E6F9E6;">
 
 	<p class="tab"  align="center" style="color:brown;" id="message">Login Credential Failed, Please Login First!</p><br>
   <div class="tab"  align="center">
@@ -44,9 +45,39 @@
       <a href="register.html">New User ? Register Here</a>
 
   </div>
-</div>
+</div> -->
+
+
+
+<!-- login start -->
+<div class="container">
+            <div class="row justify-content-center py-5 mt-5">
+                <div class="col col-12 col-md-6">
+                    <form action="./LoginSrv" method="post" class="d-lg-flex flex-column justify-content-center" style="padding: 40px;background: #ffffff;box-shadow: 0px 0px 1px rgb(84,84,84);">
+                        
+                        <p style="color:#b0b0b0;" id="message">Login  Failed, Please Login First!</p>
+                        <h1 class="login-heading">Hello! let's get started</h1>
+                        <p class="login-para">Sign in to&nbsp; continue.</p>
+                        <div class="form-group"><input class="form-control" type="email" name="username" placeholder="email" style="width: px;" required></div>
+                        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
+                        
+                        <div class="form-group"><select class="form-control" name="usertype"  required>
+                        					<option value="">Select user type..</option>
+                      						<option value="customer">Customer</option>
+                      						<option value="admin">Admin</option>
+                   							 </select> </div>
+                        
+                        <div class="form-group"><button class="btn btn-success btn-block btn-login" type="submit">&nbsp; Log in</button></div>
+                        
+                        <div class="form-group text-center"><a class="create-account-link" href="register.html">Don't have an account? create</a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<!-- login end -->
 	
-	<%@ include file="footer.html" %>
+	<%@ include file="footer2.html" %>
 
 </body>
 </html>

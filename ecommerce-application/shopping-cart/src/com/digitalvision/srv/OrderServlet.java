@@ -37,7 +37,9 @@ public class OrderServlet extends HttpServlet {
 		
 		
 		double paidAmount = Double.parseDouble(request.getParameter("amount"));
-		String status = new OrderDaoImpl().paymentSuccess(userName, paidAmount);
+		String shipAddress = request.getParameter("shippingaddress");
+		
+		String status = new OrderDaoImpl().paymentSuccess(userName, paidAmount, shipAddress);
 		
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html");

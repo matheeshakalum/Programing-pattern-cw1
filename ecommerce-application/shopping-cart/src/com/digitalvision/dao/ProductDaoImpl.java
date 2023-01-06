@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.digitalvision.beans.DemandBean;
 import com.digitalvision.beans.ProductBean;
+import com.digitalvision.beans.WishListBean;
 import com.digitalvision.utility.DBUtil;
 import com.digitalvision.utility.IDUtil;
 import com.digitalvision.utility.MailMessage;
@@ -226,6 +227,63 @@ public class ProductDaoImpl implements ProductDao{
 		DBUtil.closeConnection(rs);
 		
 		return products;
+	}
+	
+	@Override
+	public List<ProductBean> getAllProducts(String productName) {
+		
+		List<ProductBean> products = new ArrayList<ProductBean>();
+		
+		Connection con = DBUtil.provideConnection();
+		
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			ps = con.prepareStatement("select * from product where pName=?");
+			ps.setString(1, productName);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				ProductBean product = new ProductBean();
+				
+				product.setProdId(rs.getString(1));
+				product.setProdName(rs.getString(2));
+				product.setProdType(rs.getString(3));
+				product.setProdInfo(rs.getString(4));
+				product.setProdPrice(rs.getDouble(5));
+				product.setProdQuantity(rs.getInt(6));
+				product.setProdImage(rs.getAsciiStream(7));
+				
+				products.add(product);
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
+		
+		return products;
+	}
+
+	
+	public List<ProductBean> filterByNameList(List<ProductBean> productList ,String filter) {
+		
+		List<ProductBean> products = new ArrayList<ProductBean>();
+		for(ProductBean product: productList) {
+			if(product.getProdName().toUpperCase().contains(filter.toUpperCase())) {
+				products.add(product);
+			}
+		}
+		return products;
+		
 	}
 
 	@Override
@@ -459,5 +517,6 @@ public class ProductDaoImpl implements ProductDao{
 		
 		return quantity;
 	}
+	
 
 }

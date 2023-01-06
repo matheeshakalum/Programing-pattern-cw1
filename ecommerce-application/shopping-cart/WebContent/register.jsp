@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ellison Electronics</title>
+<title>Digital Vision-Register</title>
 <link href="../css/changes.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -13,10 +13,16 @@
 	<%@ include file="header.html" %>
 	
   <div class="products" style="background-color: #E6F9E6;">
-	
-	<div class="tab" align="center" style="color:brown;">
+	<%
+	String msg="";
+	if(request.getAttribute("message")!=null)
+	{%>
+		<div class="tab" align="center" style="color:brown;">
 			<%=request.getAttribute("message") %>
-	</div>
+		</div>
+	<%}
+	%>
+	
 	<br>
 	
   	<div class="tab"  align="center">
@@ -25,17 +31,19 @@
       
         <form action="./RegisterSrv" method="post">
           <table border="0">
-            <tr><td>Name: </td><td><input type="text" name="username"style="font-size: 15px;font-weight: normal; width:100%" required></td></tr>
+            <tr><td>Name* </td><td><input type="text" name="username"style="font-size: 15px;font-weight: normal; width:100%" required></td></tr>
             <tr><td><br></td><td><br></td></tr>
-            <tr><td>Mobile No.&nbsp;</td><td><input type="Phone" name="mobile"style="font-size: 15px;font-weight: normal;" required></td></tr>
+            <tr><td>Mobile No.&nbsp;</td><td><input type="Phone" name="mobile"style="font-size: 15px;font-weight: normal;" ></td></tr>
             <tr><td><br></td><td><br></td></tr>            
-            <tr><td>Email Id</td><td><input type="email" name="email"style="font-size: 15px;font-weight: normal;" required></td></tr>
+            <tr><td>Email Id*</td><td><input type="email" name="email"style="font-size: 15px;font-weight: normal;" required></td></tr>
             <tr><td><br></td><td><br></td></tr>
-            <tr><td>Address</td><td><textarea name="address"style="font-size: 15px;font-weight: normal;width: 100%; height: 80px" required></textarea></td></tr>
+            <tr><td>Delivery Address</td><td><textarea name="address"style="font-size: 15px;font-weight: normal;width: 100%; height: 80px" ></textarea></td></tr>
             <tr><td><br></td><td><br></td></tr>
-            <tr><td>PinCode</td><td><input type="text" name="pincode"style="font-size: 15px;font-weight: normal;" required></td></tr>
+            <tr><td>Billing Address</td><td><textarea name="billaddress"style="font-size: 15px;font-weight: normal;width: 100%; height: 80px"></textarea></td></tr>
             <tr><td><br></td><td><br></td></tr>
-            <tr><td>Password</td><td><input type="password" name="password"style="font-size: 15px;font-weight: normal;" required></td></tr>
+            <tr><td>Postal Code</td><td><input type="text" name="pincode"style="font-size: 15px;font-weight: normal;" ></td></tr>
+            <tr><td><br></td><td><br></td></tr>
+            <tr><td>Password*</td><td><input type="password" name="password"style="font-size: 15px;font-weight: normal;" autocomplete="off" required></td></tr>
             <tr><td><br></td><td><br></td></tr>
             <tr colspan="2" align="center"><td>&nbsp;</td><td><input type="submit" name="submit" value="Register"></td></tr>
 
