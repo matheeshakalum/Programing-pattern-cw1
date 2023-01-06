@@ -57,7 +57,7 @@ public class CartDaoImpl implements CartDao{
 					boolean flag = demand.addProduct(demandBean);
 					
 					if(flag)
-						status += "<br/>Later, We Will Mail You when "+product.getProdName()+" will be available into the Store!";
+						status += "<br/>Sorry! currently the product "+product.getProdName()+" is not available";
 					
 					
 				}
