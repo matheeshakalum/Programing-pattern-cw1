@@ -62,6 +62,8 @@ public class UserDaoImpl implements UserDao {
 			if(k>0) {
 				status = "User Registered Successfully!";
 				//MailMessage.registrationSuccess(user.getEmailId(), user.getUserName().split(" ")[0]);
+				
+				MailMessage.registrationSuccess(user.getEmailId(), user.getUserName());
 			}
 			
 		} catch (SQLException e) {

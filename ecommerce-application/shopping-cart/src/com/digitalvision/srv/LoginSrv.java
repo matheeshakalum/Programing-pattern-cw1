@@ -84,8 +84,7 @@ public class LoginSrv extends HttpServlet {
             if (loginAttempt >= 2 )
             {
             	
-                long lastAccessedTime = 
-                session.getLastAccessedTime();
+                long lastAccessedTime =  session.getLastAccessedTime();
                 Date date = new Date();
                 long currentTime = date.getTime();
                 long timeDiff = currentTime - lastAccessedTime;
@@ -129,8 +128,10 @@ public class LoginSrv extends HttpServlet {
 					 
 					 session.setAttribute("loginCount", 0);
 					 
-					 RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
-					 rd.forward(request, response);
+//					 RequestDispatcher rd = request.getRequestDispatcher("userHome.jsp");
+//					 rd.forward(request, response);
+					 
+					 response.sendRedirect("userHome.jsp");
 					 
 				 }
 				 else {
