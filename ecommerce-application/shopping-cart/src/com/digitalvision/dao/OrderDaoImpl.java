@@ -116,18 +116,20 @@ public class OrderDaoImpl implements OrderDao{
 	public boolean addTransaction(TransactionBean transaction) {
 		boolean flag = false;
 		
+		
 		Connection con = DBUtil.provideConnection();
 		
 		PreparedStatement ps = null;
 		
 		try {
-			ps = con.prepareStatement("insert into transactions values(?,?,?,?,?)");
+			ps = con.prepareStatement("insert into transactions values(?,?,?,?,?,?)");
 			
 			ps.setString(1, transaction.getTransactionId());
 			ps.setString(2, transaction.getUserName());
 			ps.setTimestamp(3, transaction.getTransDateTime());
 			ps.setDouble(4, transaction.getTransAmount());
 			ps.setString(5, transaction.getShipAddress());
+			ps.setString(6, "Beign Process");
 			int k = ps.executeUpdate();
 			
 			if(k>0)

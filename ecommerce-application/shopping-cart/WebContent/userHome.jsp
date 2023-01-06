@@ -8,18 +8,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  		
-  			
-   		<!-- <link rel="stylesheet" href="css/changes.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
-  		
-  		
+
      	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       	<script src="https://kit.fontawesome.com/c66e84566e.js" crossorigin="anonymous"></script>
-      	
-  		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+      
   
 </head>
 <body>
@@ -41,9 +33,6 @@
 
 <%@ include file="userHeader.jsp" %>
 
-	<!-- <script>document.getElementById('mycart').innerHTML='<i data-count="20" class="fa fa-shopping-cart fa-3x icon-white badge" style="background-color:#333;margin:0px;padding:0px; margin-top:5px;"></i>'</script>
- -->
- 
  
  <section id="items">
         <div style="background: #8d84f8;padding-top: 1px;padding-bottom: 1px;padding-left: 5px;padding-right: 5px;">
@@ -103,47 +92,6 @@
  </script> 
  
  
-<!-- Start of Product Items List -->
-<%-- <div class="products" >
-<div class="row text-center">
-
-  <%
-  	WishListDao wishlist = new WishListDaoImpl();
-	
-  	ProductDaoImpl prodDao = new ProductDaoImpl(); 
-  	List<ProductBean> products = new ArrayList<ProductBean>();
-  	products = prodDao.getAllProducts();
-  	
-  	for(ProductBean product : products){
-  		
-  	boolean isWishListAdded=wishlist.isAvailable(userName, product.getProdId()); 
-  		
-  %>
-  
-  <div class="col-sm-4">
-    <div class="img-thumbnail">
-      <img src="./ShowImage?pid=<%=product.getProdId() %>" alt="Product" style="height:200px; max-width:200px">
-      <p class="productname"><%=product.getProdName() %> ( <%=product.getProdId() %> ) </p>
-      <p class="productinfo"><%=product.getProdInfo() %></p>
-      <p class="price">Rs <%=product.getProdPrice() %> </p>
-      <form method="post">
-      	<button type="submit" formaction="./AddtoCart?uid=<%=userName %>&pid=<%=product.getProdId() %>&pqty=1">Add to Cart</button>&nbsp;&nbsp;&nbsp;
-      	<button type="submit" formaction="./AddtoCart?uid=<%=userName %>&pid=<%=product.getProdId() %>&pqty=1">Buy Now</button>
-      <%if(isWishListAdded==true){%>
-      	<div><a href="./AddtoWishList?uid=<%=userName %>&pid=<%=product.getProdId()%>&type=remove"><i class="fa fa-heart fa-heart fa-2x" style="cursor:pointer;"></i></a></div>
-     <%}else{%>
-      	<div><a href="./AddtoWishList?uid=<%=userName %>&pid=<%=product.getProdId()%>&type=add"><i class="fa-regular fa-heart fa-2x" style="cursor:pointer;"></i></a></div>
-      <%} %>
-      </form>
-    </div>
-  </div>
-  
-  <%}%>
-  
-</div>
-</div> --%>
-<!-- ENd of Product Items List -->
-
 
 
 <div class="container">	<!-- Start of new Product Items List -->
@@ -154,19 +102,27 @@
 		
 		<%
 		
-		String searchpro = request.getParameter("searchProductUser");
+		
 		//String searchpro = "ra";
-		System.out.println("#################################  "+ searchpro);
+		/* System.out.println("#################################  "+ searchpro); */
 		
   	WishListDao wishlist = new WishListDaoImpl();
 	
   	ProductDaoImpl prodDao = new ProductDaoImpl(); 
+  	
   	List<ProductBean> products = new ArrayList<ProductBean>();
+  	
   	products = prodDao.getAllProducts();
   	
   	List<ProductBean> products1 = new ArrayList<ProductBean>();
-  	
+  	String searchpro = "";
   	products1 = prodDao.getAllProducts();
+  	if(request.getParameter("searchProductUser")!= null){
+  		
+  	 searchpro = request.getParameter("searchProductUser");
+  	}
+  	
+  	
 		if(searchpro != null && !searchpro.isEmpty() && !searchpro.equals("")){
 			
 			products=prodDao.filterByNameList(products1, searchpro);
